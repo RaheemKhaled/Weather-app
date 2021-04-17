@@ -52,9 +52,9 @@ async function GettingData(zipcode , feel){
 }
 
 //function by which we post the data
-const postData = async ( url = '' , data = {})=>{
+const postData = async ( url = "" , data = {})=>{
     console.log(data);
-    const response = await fetch(url, {
+    const response = await fetch (url , {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
@@ -63,6 +63,7 @@ const postData = async ( url = '' , data = {})=>{
         body: JSON.stringify(data)
     });
     try{
+
         const newDate = await response.json();
         console.log(newDate);
         return newDate;
@@ -75,9 +76,10 @@ const updateUI = async ()=>{
     const request = await fetch('/all');
     try{
         const allData= await request.json();
-        document.getElementById('date').innerHTML = `Date: ${allData[0].date} `;
-        document.getElementById('temp').innerHTML = `Temperature: ${allData[0].temp} `;
-        document.getElementById('content').innerHTML = `Date: ${allData[0].content} `;    
+    
+      document.getElementById('date').innerHTML = `Date: ${allData.date} `;
+      document.getElementById('temp').innerHTML = `Temperature: ${allData.temp} `;
+      document.getElementById('content').innerHTML = `Content: ${allData.content} `;    
     }catch(error){
         console.log("error" , error);
     }
