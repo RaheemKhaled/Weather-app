@@ -17,11 +17,11 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
-app.get("/getWeather", (req,res)=>{
+app.get("/all", (req,res)=>{
     res.send(projectData);
 })
 
-app.post("/addWeather", (req, res)=>{
+app.post("/add", (req, res)=>{
     res.send()
 })
 
@@ -39,17 +39,17 @@ function listening (){
 app.get('/all', data);
 function data (req , res){
     res.send(projectData);
-    projectData = [];
+
 }
 
 
-app.post('/all', sendData);
+app.post('/add', sendData);
 function sendData (req , res){
     console.log(req.body);
     newEntry = {
-        data: req.body.data,
+        date: req.body.date,
         temp: req.body.temp,
         content: req.body.content
     }
-    projectData.push(newEntry)
+    projectData = newEntry ;
 }
