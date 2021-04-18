@@ -52,4 +52,5 @@ function sendData (req , res){
         content: req.body.content
     }
     projectData = newEntry ;
+    res.send(projectData);
 }
