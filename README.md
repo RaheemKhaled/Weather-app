@@ -1,11 +1,15 @@
 # weather-app
 In the app.js file:
   - define my global variables
-  - define the bottun in the generate variable
-  - add an event to the bottun
-  - getting the value which is typed in div of zip and feelings
-  - in the situation any data the user do not type it, alert a message
-  - define the function which recieve data from user
+      => the url ( link +zipcode + addkey + key)
+      => select the feeling div in avarianle
+      => select the button  in a variable
+  - define the get date function
+  - define the action function by which the event perform
+  - add an event to the bottun calling action function
+  - define the function which getting the weather
+  - define the function which save data which received
+  - define the function which pick up the temperature
   - define the post function
   - define update function
 
